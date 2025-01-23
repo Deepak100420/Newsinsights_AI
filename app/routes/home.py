@@ -109,7 +109,7 @@ with st.container():
         
             
 
-        lottie=load_animation("assets\Animation2.json")
+        lottie=load_animation("assets/Animation2.json")
 
         
 
