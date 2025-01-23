@@ -2,7 +2,7 @@ from langchain_google_genai import GoogleGenerativeAI,ChatGoogleGenerativeAI
 
 from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.prompts import PromptTemplate
-
+import streamlit as st
 from pydantic import BaseModel, Field
 from langchain_core.output_parsers import StrOutputParser
 from langchain.schema.runnable import RunnableLambda,RunnableParallel
@@ -13,12 +13,13 @@ import os
 
 load_dotenv()
 
-# Suppress logging warnings
-os.environ["GRPC_VERBOSITY"] = "ERROR"
-os.environ["GLOG_minloglevel"] = "2"
+os.environ["LANGSMITH_TRACING"]="true"
+os.environ["LANGSMITH_ENDPOINT"]="https://api.smith.langchain.com"
+os.environ["LANGSMITH_API_KEY"]="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"
+os.environ["LANGSMITH_PROJECT"]="newsglance-ai"
 
-model_key=os.getenv('GOOGLE_MODEL_API_KEY')
-search_key=os.getenv('GOOGLE_SEARCH_API_KEY')
+model_key=st.secrets["GOOGLE_MODEL_API_KEY"]
+search_key=st.secrets['GOOGLE_SEARCH_API_KEY']
 
 
 
@@ -144,6 +145,7 @@ result=question_parser|news       #RunnableParallel(branches={"pros": output})
 
 
 def output(query):
+
 
     output=result.invoke({"question":query})
     return output

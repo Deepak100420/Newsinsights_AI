@@ -9,6 +9,13 @@ from backend.functions import load_animation
 import streamlit as st
 from streamlit_lottie import st_lottie
 
+
+
+os.environ["LANGSMITH_TRACING"]="true"
+os.environ["LANGSMITH_ENDPOINT"]="https://api.smith.langchain.com"
+os.environ["LANGSMITH_API_KEY"]="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"
+os.environ["LANGSMITH_PROJECT"]="newsglance-ai"
+
 st.set_page_config(
     page_title="NewsGlance AI",
     page_icon=":newspaper:",
