@@ -4,3 +4,5 @@ myenv
 # Ignore Python bytecode files
 __pycache__/
 *.pyc
+# Ignore .streamlit folder
+.streamlit/
