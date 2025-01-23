@@ -1,4 +1,5 @@
-# Newsglance AI
+
+# 📰Newsglance AI
 
 ## Description
 Newsglance AI is a web application that summarizes real-time news articles from Google News. The website provides:
@@ -6,7 +7,7 @@ Newsglance AI is a web application that summarizes real-time news articles from 
 - A link to the original news article.
 - The ability to customize news based on country and categories like politics, sports, business, etc.
 
-The website fetches news from Google News and uses the Gemini Fash1.5 language model (LLM) to summarize the content, powered by LangChain, Google Gemini, and Serapi.
+The website fetches news from Google News and uses the Gemini Flash1.5 language model (LLM) to summarize the content, powered by LangChain, Google Gemini, and Serapi.
 
 ## Features
 - Real-time news summarization.
@@ -26,5 +27,17 @@ The website fetches news from Google News and uses the Gemini Fash1.5 language m
 ### Install Dependencies
 You can install all required dependencies from the `requirements.txt` file by running:
 
-```bash
-pip install -r requirements.txt
+
+### pip install -r requirements.txt 
+
+
+### Key sections explained:
+- **Project Setup**:
+  - Cloning the repo
+  - Installing dependencies from `requirements.txt`
+  - Setting up API keys (if needed)
+  - Creating an `.env` file for environment variables (optional but common)
+  
+- **Run Instructions**:
+  - Command to run the app (`streamlit run main.py`)
+
