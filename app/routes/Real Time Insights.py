@@ -71,7 +71,7 @@ with st.sidebar:
 with st.sidebar:
     with st.container(border=True):
         
-        chat=st.chat_input("ask me anything about news")
+        chat=st.chat_input("Enter Your Query")
 
 
 
@@ -111,36 +111,50 @@ elif aa:
 
                 st.markdown(
         """
-        <style>
-        .big-font {
-            font-size: 18px;
-            line-height: 1.8;
-        }
-        .progress-arrow {
-            font-size: 24px;
-            color: #007BFF; /* Blue color */
-            font-weight: bold;
-            display: inline-block;
-            margin: 0 10px;
-        }
-        .container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-        </style>
+    <style>
+    .big-font {
+        font-size: 18px;
+        line-height: 1.8;
         
-        <div class="container">
-            <div class="big-font">
-                <strong>👆🏻 Select Your Country</strong>
-                <strong class="progress-arrow">➔</strong>
-                <strong>💖 Pick Your Favorite Topics</strong>
-                <strong class="progress-arrow">➔</strong>
-                <strong>⚒️ AI Does the Work</strong>
-            </div>
+        text-align: center;
+    }
+    .progress-arrow {
+        font-size: 24px;
+        color: #007BFF; /* Blue color for arrows */
+        font-weight: bold;
+        display: inline-block;
+        margin: 0 10px;
+    }
+    .or-section {
+        font-size: 18px;
+        
+        text-align: center;
+        margin: 10px 0;
+    }
+    .search-section {
+        font-size: 18px;
+        line-height: 1.8;
+       
+        text-align: center;
+    }
+    </style>
+    
+    <div class="container">
+        <div class="big-font">
+            <strong>👆🏻 Select Your Country</strong>
+            <strong class="progress-arrow">➔</strong>
+            <strong>💖 Pick Your Favorite Topics</strong>
+            <strong class="progress-arrow">➔</strong>
+            <strong>⚒️ AI Does the Work</strong>
         </div>
-        """,
+        <div class="or-section">
+            <strong>OR</strong>
+        </div>
+        <div class="search-section">
+            <strong>🔍 Simply Search for What You Need</strong>
+        </div>
+    </div>
+    """,
         unsafe_allow_html=True,
     )
 
@@ -191,36 +205,50 @@ else:
 
                 st.markdown(
         """
-        <style>
-        .big-font {
-            font-size: 18px;
-            line-height: 1.8;
-        }
-        .progress-arrow {
-            font-size: 24px;
-            color: #007BFF; /* Blue color */
-            font-weight: bold;
-            display: inline-block;
-            margin: 0 10px;
-        }
-        .container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-        </style>
+    <style>
+    .big-font {
+        font-size: 18px;
+        line-height: 1.8;
+       
+        text-align: center;
+    }
+    .progress-arrow {
+        font-size: 24px;
+        color: #007BFF; /* Blue color for arrows */
+        font-weight: bold;
+        display: inline-block;
+        margin: 0 10px;
+    }
+    .or-section {
+        font-size: 18px;
+       
+        text-align: center;
+        margin: 10px 0;
+    }
+    .search-section {
+        font-size: 18px;
+        line-height: 1.8;
         
-        <div class="container">
-            <div class="big-font">
-                <strong>👆🏻 Select Your Country</strong>
-                <strong class="progress-arrow">➔</strong>
-                <strong>💖 Pick Your Favorite Topics</strong>
-                <strong class="progress-arrow">➔</strong>
-                <strong>⚒️ AI Does the Work</strong>
-            </div>
+        text-align: center;
+    }
+    </style>
+    
+    <div class="container">
+        <div class="big-font">
+            <strong>👆🏻 Select Your Country</strong>
+            <strong class="progress-arrow">➔</strong>
+            <strong>💖 Pick Your Favorite Topics</strong>
+            <strong class="progress-arrow">➔</strong>
+            <strong>⚒️ AI Does the Work</strong>
         </div>
-        """,
+        <div class="or-section">
+            <strong>OR</strong>
+        </div>
+        <div class="search-section">
+            <strong>🔍 Simply Search for What You Need</strong>
+        </div>
+    </div>
+    """,
         unsafe_allow_html=True,
     )
 

@@ -15,7 +15,7 @@ default=True
 )
 
 project=st.Page(
-    page="app/routes/page1.py",
+    page="app/routes/Real Time Insights.py",
     title="Real Time Insights",
     icon="🗞️"
 )

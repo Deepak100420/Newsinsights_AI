@@ -121,6 +121,10 @@ with st.container():
 
 st.write("---")
 
+# Get the base URL of the app dynamically
+base_url = "https://newsglanceai.streamlit.app/"
 
-
+# Construct the full URL for the "Real Time Insights" page
+page_url = f"{base_url}Real_Time_Insights"
+st.link_button("Get Started", url=page_url,icon=":material/bolt:",type="primary")
 
