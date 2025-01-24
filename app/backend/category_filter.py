@@ -61,6 +61,11 @@ def search_news(query):
     })
     result=search.get_dict()
     news=[]
+
+    if "news_results" not in result or not result["news_results"]:
+        news.append({"Title": "No results found", "Snippet": "No results found", "Link": "No results found"})
+        return news
+    
     for i in result["news_results"]:
         new_entry={
             "Title" : i["title"],
@@ -82,7 +87,8 @@ def news_summary(query):
 1. The article must explicitly relate to the query.
 2. The article must provide useful and specific information. If the content is vague, generic, or lacks valuable insights, exclude it.
 3. Do not include any text like as if you are generatining from given data and do not show you like a AI,you should act like human
-4.do not refer the artcile or content,i want direct answer
+4.do not refer the artcile or content,i want direct answer 
+
 \n{format_instructions}\n
 
 Input:
@@ -105,6 +111,15 @@ Generate a filtered list of articles relevant to the query. Format the output as
   
 ]
 
+if empyt means:
+
+  [
+    
+    "title": "no result found",
+    "summary": "should give the proper input",
+    "link": ""
+  ]
+
 """
 
     #prompt=PromptTemplate.from_template(template=template)
@@ -113,7 +128,7 @@ Generate a filtered list of articles relevant to the query. Format the output as
     class neww(BaseModel):
         title: str = Field(description="title of the article")
         summary: str = Field(description="summary of the article")
-        linl: str=Field(description="link of the article")
+        link: str=Field(description="link of the article")
 
 
    

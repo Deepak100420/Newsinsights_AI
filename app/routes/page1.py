@@ -11,10 +11,7 @@ from streamlit_lottie import st_lottie
 
 
 
-os.environ["LANGSMITH_TRACING"]="true"
-os.environ["LANGSMITH_ENDPOINT"]="https://api.smith.langchain.com"
-os.environ["LANGSMITH_API_KEY"]="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"
-os.environ["LANGSMITH_PROJECT"]="newsglance-ai"
+
 
 st.set_page_config(
     page_title="NewsGlance AI",
@@ -62,21 +59,44 @@ with st.sidebar:
     add_radio = selected_category = st.pills("Select Area of Interest :fire:", categories, selection_mode="single")
 
 
-    aa=st.button("Submit", type="primary",icon=":material/upload:")
+    
+    submit_container=st.container(border=False)
+    with submit_container:
+        aa=st.button("Submit", type="primary",icon=":material/upload:")
+       # st.write("Click submit")
+
+
+    
+
+with st.sidebar:
+    with st.container(border=True):
+        
+        chat=st.chat_input("ask me anything about news")
+
+
+
+if chat:
+    result = output(query=chat)
+
+    # Loop through each item in the result
+    for article in result:
+        with st.container(border=True):
+            # Display the headline
+            st.subheader(f'_:blue[{article['title']}]_',  divider="gray",anchor=False)
+            
+            # Display the summary
+            st.write(article['summary'])
+            
+            if 'link' in article and article['link']:
+                st.write(f":link: [:red[Read the full article]]({article['link']})")
 
 
 
 
-
-
-
-
-
-
-if aa:
+elif aa:
 
     if option == "Select":
-        with st.sidebar:
+        with submit_container:
             st.write("Please Select the country")
 
         with st.container():
@@ -87,7 +107,7 @@ if aa:
                 
                 st.subheader("🚀 _:blue[ **How It Works?**]_",anchor=False)
 
-                import streamlit as st
+                
 
                 st.markdown(
         """
@@ -152,6 +172,9 @@ if aa:
                 
                 if 'link' in article and article['link']:
                     st.write(f":link: [:red[Read the full article]]({article['link']})")
+
+
+
     
 else:
     
@@ -215,5 +238,11 @@ else:
 
 
 
-    with st.sidebar:
-        st.write("Click submit")
+
+
+
+
+
+    
+
+
